@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://2xv35dnarc0v"]
+[gd_scene format=3 uid="uid://2xv35dnarc0v"]
 
-[ext_resource type="PackedScene" uid="uid://nrm8cyb2tp2r" path="res://SniperRifle_01.fbx" id="1_c56vp"]
+[ext_resource type="PackedScene" uid="uid://ctl4got6k6vm0" path="res://FBX/SniperRifle_01.fbx" id="1_c56vp"]
 
 [sub_resource type="Animation" id="Animation_q81eb"]
 resource_name = "shoot"

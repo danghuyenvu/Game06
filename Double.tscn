@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi7intdv0w07m"]
+[gd_scene format=3 uid="uid://bi7intdv0w07m"]
 
-[ext_resource type="PackedScene" uid="uid://b2004xl2lg3qj" path="res://Shotgun_03.fbx" id="1_8b3gr"]
+[ext_resource type="PackedScene" uid="uid://b4hwecbq3lr7l" path="res://FBX/Shotgun_03.fbx" id="1_8b3gr"]
 
 [sub_resource type="Animation" id="Animation_u5qg6"]
 resource_name = "shoot"
