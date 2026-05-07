@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://qxc6hm2qgjrp"]
+
+[ext_resource type="PackedScene" uid="uid://duvel28lgr4k" path="res://FBX/AssaultRifle_03.fbx" id="1_d44aw"]
+
+[sub_resource type="Animation" id="Animation_d44aw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AssaultRifle_03:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AssaultRifle_03:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dg7bf"]
+resource_name = "reload"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AssaultRifle_03:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.8333333, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.5228286, 0.37794542), Vector3(0.15035361, 0.5228286, 0.37794542), Vector3(0, 0.5228286, 0.37794542), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AssaultRifle_03:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.4067253, -0.010519814, 0.4584682), Vector3(-0.8381851, -0.39862132, 1.2145249), Vector3(-0.4067253, -0.010519814, 0.4584682), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_18aqi"]
+resource_name = "shoot"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AssaultRifle_03:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.04323131), Vector3(0, 0, -3.7252903e-09)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AssaultRifle_03:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.06480408, 0, 0), Vector3(-7.450581e-09, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dg7bf"]
+_data = {
+&"RESET": SubResource("Animation_d44aw"),
+&"reload": SubResource("Animation_dg7bf"),
+&"shoot": SubResource("Animation_18aqi")
+}
+
+[node name="Node3D" type="Node3D" unique_id=661047730]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=337477181]
+libraries/ = SubResource("AnimationLibrary_dg7bf")
+
+[node name="AssaultRifle_03" parent="." unique_id=1779233838 instance=ExtResource("1_d44aw")]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
