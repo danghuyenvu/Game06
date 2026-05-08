@@ -14356,4 +14356,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.98216, 2.963437, 43.73428
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.99354, 2.9175828, 12.059318)
 
 [node name="ProtoController" parent="." unique_id=1611418931 instance=ExtResource("128_iepg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8.070713, 48.154785)
