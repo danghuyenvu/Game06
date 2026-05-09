@@ -52,28 +52,41 @@ var freeflying : bool = false
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
-@onready var gun = $Head/Camera3D/AWP
+@onready var weapon_manager = $Head/Camera3D/WeaponManager
 @onready var crosshair = $CanvasLayer/Crosshair
 
 func _ready() -> void:
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
+	capture_mouse()
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Mouse capturing
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		capture_mouse()
+
 	if Input.is_key_pressed(KEY_ESCAPE):
 		release_mouse()
+	# Mouse capturing
+	if Input.is_action_just_pressed("shoot"):
+		var weapon = weapon_manager.get_current_weapon()
+		if weapon:
+			weapon.shoot()
+
+	if Input.is_action_just_pressed("reload"):
+		var weapon = weapon_manager.get_current_weapon()
+		if weapon:
+			weapon.reload()
+			
+	if Input.is_key_pressed(KEY_1):
+		weapon_manager.equip_primary()
+
+	if Input.is_key_pressed(KEY_2):
+		weapon_manager.equip_secondary()
 	
 	# Look around
 	if mouse_captured and event is InputEventMouseMotion:
 		rotate_look(event.relative)
-	if Input.is_action_just_pressed("shoot"):
-		gun.shoot()
-	if Input.is_action_just_pressed("reload"):
-		gun.reload()
 	
 	# Toggle freefly mode
 	if can_freefly and Input.is_action_just_pressed(input_freefly):
