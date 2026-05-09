@@ -128,6 +128,7 @@
 [ext_resource type="PackedScene" uid="uid://c3cahinscv70u" path="res://3d models/Props/busstop.tscn" id="125_auc2o"]
 [ext_resource type="PackedScene" uid="uid://lgxqhxjjwx14" path="res://3d models/Props/light_double.tscn" id="126_j5v5v"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="128_iepg8"]
+[ext_resource type="PackedScene" uid="uid://ckcbgvwrflqh7" path="res://addons/mob_no1/black_reaper_–_retro_psx_monster.tscn" id="129_mob1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ne152"]
 panorama = ExtResource("1_n5say")
@@ -14355,5 +14356,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.98216, 2.963437, 43.73428
 [node name="Light Double39" parent="." unique_id=1462226941 instance=ExtResource("126_j5v5v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.99354, 2.9175828, 12.059318)
 
-[node name="ProtoController" parent="." unique_id=1611418931 instance=ExtResource("128_iepg8")]
+[node name="ProtoController" parent="." unique_id=1611418931 groups=["player"] instance=ExtResource("128_iepg8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8.070713, 48.154785)
+
+[node name="MobNo1" parent="." unique_id=40277615 instance=ExtResource("129_mob1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1, 3.2605863, 41.13592)
