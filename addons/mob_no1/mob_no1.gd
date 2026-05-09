@@ -87,7 +87,8 @@ func _physics_process(delta: float) -> void:
 	_attack_cooldown_left = maxf(_attack_cooldown_left - delta, 0.0)
 	velocity += get_gravity() * gravity_multiplier * delta
 
-	if not is_instance_valid(target):
+	# Tìm target gần nhất mỗi frame nếu target hiện tại mất hoặc xa
+	if not is_instance_valid(target) or global_position.distance_to(target.global_position) > lose_aggro_range:
 		_find_target()
 
 	_state_time += delta
@@ -310,20 +311,42 @@ func _move_state() -> State:
 
 
 func _find_target() -> void:
+	if not is_instance_valid(target):
+		target = null
+	
+	# Ưu tiên target_path nếu có
 	if not target_path.is_empty():
-		var node := get_node_or_null(target_path)
+		var node = get_node_or_null(target_path)
 		if node is Node3D:
 			target = node
 			return
-	var players := get_tree().get_nodes_in_group(player_group)
-	if not players.is_empty() and players[0] is Node3D:
-		target = players[0]
+	
+	# Tìm tất cả player trong group
+	var players = get_tree().get_nodes_in_group(player_group)
+	if players.is_empty():
+		# Fallback tìm ProtoController
+		var scene = get_tree().current_scene
+		if scene:
+			var proto = scene.find_child("ProtoController", true, false)
+			if proto is Node3D:
+				target = proto
 		return
-	var scene := get_tree().current_scene
-	if scene:
-		var proto := scene.find_child("ProtoController", true, false)
-		if proto is Node3D:
-			target = proto
+	
+	# Tìm player gần nhất
+	var closest_player: Node3D = null
+	var min_distance: float = INF
+	
+	for p in players:
+		if p is Node3D and is_instance_valid(p):
+			var dist = global_position.distance_to(p.global_position)
+			if dist < min_distance:
+				min_distance = dist
+				closest_player = p
+	
+	if closest_player:
+		target = closest_player
+		if debug_logs:
+			print("Mob selected closest player, distance = %.1f" % min_distance)
 
 
 func _resolve_animation_player() -> AnimationPlayer:
