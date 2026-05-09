@@ -171,6 +171,7 @@
 [ext_resource type="PackedScene" uid="uid://d2o7i8v5nu3wh" path="res://FBX/AssaultRifle_02.fbx" id="168_voc4j"]
 [ext_resource type="PackedScene" uid="uid://duvel28lgr4k" path="res://FBX/AssaultRifle_03.fbx" id="169_5vtos"]
 [ext_resource type="PackedScene" uid="uid://c3l6jjsilhxal" path="res://FBX/AssaultRifleAmmo_Box.fbx" id="170_fnds1"]
+[ext_resource type="PackedScene" uid="uid://bsooyt2c1e3rr" path="res://addons/Blood_Juggernaut/blood_juggernaut_.tscn" id="172_5vtos"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ne152"]
 panorama = ExtResource("1_n5say")
@@ -15699,3 +15700,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.986053, 0.30724025, 0.2189
 
 [node name="fence 54" parent="HomeZone" unique_id=1920886084 instance=ExtResource("87_q3oog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.986053, 0.30724025, -0.4601596)
+
+[node name="Blood_Juggernaut" parent="." unique_id=998641636 instance=ExtResource("172_5vtos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 24)
