@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://b7jldib6deouk" path="res://DE.tscn" id="7_x436g"]
 [ext_resource type="PackedScene" uid="uid://borij8476doi8" path="res://ar2.tscn" id="8_gxq8o"]
 [ext_resource type="PackedScene" uid="uid://4nywpgl11701" path="res://Revolver.tscn" id="8_x436g"]
-[ext_resource type="PackedScene" uid="uid://qxc6hm2qgjrp" path="res://ar3.tscn" id="9_f4vau"]
 [ext_resource type="PackedScene" uid="uid://bi7intdv0w07m" path="res://Double.tscn" id="9_q1ipm"]
 [ext_resource type="PackedScene" uid="uid://cq32gcxxqc671" path="res://ass_rif1.tscn" id="14_cisnj"]
 
@@ -30,36 +29,28 @@ height = 3.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rk7u"]
 bg_color = Color(0.6, 1, 0.6, 1)
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_q1ipm"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:rotation")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-
-[node name="ProtoController" type="CharacterBody3D" unique_id=1240680387]
+[node name="ProtoController" type="CharacterBody3D" unique_id=1280418318]
 script = ExtResource("1_ucva2")
 
-[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1341275934]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=66834053]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.5305128, 0)
 material_override = SubResource("StandardMaterial3D_iof21")
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_ucva2")
 
-[node name="Collider" type="CollisionShape3D" parent="." unique_id=925077803]
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1655360589]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.54895914, 0)
 shape = SubResource("CapsuleShape3D_g2uji")
 
-[node name="Head" type="Node3D" parent="." unique_id=117991769]
+[node name="Head" type="Node3D" parent="." unique_id=1631519486]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7499409, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1657220406]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1526863159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03700292, -0.0080343485)
 
-[node name="WeaponManager" type="Node3D" parent="Head/Camera3D" unique_id=2109098121 node_paths=PackedStringArray("dev_primary")]
+[node name="WeaponManager" type="Node3D" parent="Head/Camera3D" unique_id=1280893463 node_paths=PackedStringArray("dev_primary")]
 script = ExtResource("2_ujot4")
-dev_primary = NodePath("PrimarySlot/AUG")
+dev_primary = NodePath("PrimarySlot/M14")
 
 [node name="PrimarySlot" type="Node3D" parent="Head/Camera3D/WeaponManager" unique_id=1856896201]
 
@@ -85,10 +76,6 @@ visible = false
 
 [node name="M14" parent="Head/Camera3D/WeaponManager/PrimarySlot" unique_id=1334490612 instance=ExtResource("8_gxq8o")]
 transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 0.09884837, -0.17370212, -0.031213284)
-visible = false
-
-[node name="AUG" parent="Head/Camera3D/WeaponManager/PrimarySlot" unique_id=661047730 instance=ExtResource("9_f4vau")]
-transform = Transform3D(-0.15, 0, -2.2649372e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.15, 0.13076097, -0.093767285, -0.13901909)
 visible = false
 
 [node name="SecondarySlot" type="Node3D" parent="Head/Camera3D/WeaponManager" unique_id=1848784409]
@@ -236,6 +223,3 @@ offset_top = 621.5
 offset_right = 145.0
 offset_bottom = 644.5
 text = "100"
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=701023484]
-replication_config = SubResource("SceneReplicationConfig_q1ipm")

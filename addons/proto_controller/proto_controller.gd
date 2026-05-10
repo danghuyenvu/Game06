@@ -161,7 +161,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_2):
 		weapon_manager.equip_secondary()
 		
-
 	if mouse_captured and event is InputEventMouseMotion:
 		rotate_look(event.relative)
 
