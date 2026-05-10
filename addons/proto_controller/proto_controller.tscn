@@ -203,7 +203,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "10/50"
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer/HUD" unique_id=1102664266]
 layout_mode = 0
