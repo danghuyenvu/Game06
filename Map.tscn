@@ -96,7 +96,6 @@
 [ext_resource type="PackedScene" uid="uid://lgxqhxjjwx14" path="res://3d models/Props/light_double.tscn" id="126_j5v5v"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="128_iepg8"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_brick.tscn" id="129_k5ip7"]
-[ext_resource type="PackedScene" uid="uid://ckcbgvwrflqh7" path="res://addons/mob_no1/black_reaper_–_retro_psx_monster.tscn" id="129_mob1"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_brick_hole.tscn" id="130_8rp7r"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_door_unblocked.tscn" id="131_y0tyt"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_small_window.tscn" id="132_ebnrs"]
@@ -107,6 +106,7 @@
 [ext_resource type="PackedScene" path="res://3d models/Misc/metal_board_hori.tscn" id="137_tk7sp"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_spiked.tscn" id="138_7cx14"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/metal_barricade.tscn" id="139_ttpp1"]
+[ext_resource type="PackedScene" uid="uid://d123u3oblg0t8" path="res://Spawner.tscn" id="139_umkgv"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/metal_board.tscn" id="140_vibqx"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/metal_board_vert.tscn" id="141_go07c"]
 [ext_resource type="PackedScene" uid="uid://dplwvyswbkstq" path="res://3d models/Misc/Ladder.fbx" id="142_8rp7r"]
@@ -138,7 +138,6 @@
 [ext_resource type="PackedScene" uid="uid://d2o7i8v5nu3wh" path="res://FBX/AssaultRifle_02.fbx" id="168_voc4j"]
 [ext_resource type="PackedScene" uid="uid://duvel28lgr4k" path="res://FBX/AssaultRifle_03.fbx" id="169_5vtos"]
 [ext_resource type="PackedScene" uid="uid://c3l6jjsilhxal" path="res://FBX/AssaultRifleAmmo_Box.fbx" id="170_fnds1"]
-[ext_resource type="PackedScene" uid="uid://bsooyt2c1e3rr" path="res://addons/Blood_Juggernaut/blood_juggernaut_.tscn" id="172_5vtos"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ne152"]
 panorama = ExtResource("1_n5say")
@@ -12369,7 +12368,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 41.9
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 41.514244, 3.5996902, -40.29179)
 
 [node name="House 2 c3" parent="Buildings" unique_id=2144511579 instance=ExtResource("77_xtowc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.57215, 1.9116786, -9.057051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.57215, 12.173578, -9.057051)
 
 [node name="House 2 d2" parent="Buildings" unique_id=2060446962 instance=ExtResource("79_j7jxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.952131, 1.9116781, -9.019252)
@@ -13455,9 +13454,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.
 [node name="ProtoController" parent="." unique_id=1265634172 groups=["player"] instance=ExtResource("128_iepg8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.92461, 3.0941658, 3.1008406)
 slide_on_ceiling = false
-
-[node name="MobNo1" parent="." unique_id=136306096 instance=ExtResource("129_mob1")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1, 3.2605863, 41.13592)
 
 [node name="FoodCar" type="Node3D" parent="." unique_id=946371717]
 
@@ -15169,9 +15165,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.986053, 0.30724025, 0.2189
 [node name="fence 54" parent="HomeZone" unique_id=753270100 instance=ExtResource("87_q3oog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.986053, 0.30724025, -0.4601596)
 
-[node name="Blood_Juggernaut" parent="." unique_id=998641636 instance=ExtResource("172_5vtos")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 24)
-
 [node name="Streetlights" type="Node3D" parent="." unique_id=961337484]
 
 [node name="StreetLights#Light Double" parent="Streetlights" unique_id=1636415884 instance=ExtResource("126_j5v5v")]
@@ -15524,3 +15517,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=462264667]
 _spawnable_scenes = PackedStringArray("uid://bs72ogkvdd7d6")
 spawn_path = NodePath("..")
+
+[node name="mobspawn" parent="." unique_id=187067550 instance=ExtResource("139_umkgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56061363, 23.150919, 6.5637817)
