@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://doaikgv7qktff"]
 
 [ext_resource type="PackedScene" uid="uid://qr8qklyxdv62" path="res://ground/ground_1.glb" id="1_6skux"]
+[ext_resource type="Script" uid="uid://dfrqnm43er1ln" path="res://game.gd" id="1_j8f8g"]
 [ext_resource type="Texture2D" uid="uid://bpci128crlocf" path="res://Sky/ChatGPT Image May 8, 2026, 01_06_52 AM.png" id="1_n5say"]
 [ext_resource type="PackedScene" uid="uid://c3pwaba8h7r75" path="res://ground/ground_2.glb" id="2_rox04"]
 [ext_resource type="PackedScene" uid="uid://0mkydl8gy0tl" path="res://3d models/Streets/A bridge/Calles4.tscn" id="6_brrwk"]
@@ -202,6 +203,8 @@ size = Vector3(0.628, 0.2, 4)
 data = PackedVector3Array(-0.31399998, 0.099999994, 2, 0.31399998, 0.099999994, 2, -0.31399998, -0.099999994, 2, 0.31399998, 0.099999994, 2, 0.31399998, -0.099999994, 2, -0.31399998, -0.099999994, 2, 0.31399998, 0.099999994, -2, -0.31399998, 0.099999994, -2, 0.31399998, -0.099999994, -2, -0.31399998, 0.099999994, -2, -0.31399998, -0.099999994, -2, 0.31399998, -0.099999994, -2, 0.31399998, 0.099999994, 2, 0.31399998, 0.099999994, -2, 0.31399998, -0.099999994, 2, 0.31399998, 0.099999994, -2, 0.31399998, -0.099999994, -2, 0.31399998, -0.099999994, 2, -0.31399998, 0.099999994, -2, -0.31399998, 0.099999994, 2, -0.31399998, -0.099999994, -2, -0.31399998, 0.099999994, 2, -0.31399998, -0.099999994, 2, -0.31399998, -0.099999994, -2, 0.31399998, 0.099999994, 2, -0.31399998, 0.099999994, 2, 0.31399998, 0.099999994, -2, -0.31399998, 0.099999994, 2, -0.31399998, 0.099999994, -2, 0.31399998, 0.099999994, -2, -0.31399998, -0.099999994, 2, 0.31399998, -0.099999994, 2, -0.31399998, -0.099999994, -2, 0.31399998, -0.099999994, 2, 0.31399998, -0.099999994, -2, -0.31399998, -0.099999994, -2)
 
 [node name="Node3D" type="Node3D" unique_id=1910760461]
+script = ExtResource("1_j8f8g")
+player_scene = ExtResource("128_iepg8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1269526400]
 environment = SubResource("Environment_28i2f")
@@ -15517,3 +15520,7 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 2, 0
 
 [node name="wall_concrete_metal2" parent="." unique_id=1582176505 instance=ExtResource("139_ttpp1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 0, -38)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=462264667]
+_spawnable_scenes = PackedStringArray("uid://bs72ogkvdd7d6")
+spawn_path = NodePath("..")
