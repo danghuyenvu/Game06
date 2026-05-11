@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://doaikgv7qktff"]
+[gd_scene load_steps=200 format=3 uid="uid://doaikgv7qktff"]
 
 [ext_resource type="PackedScene" uid="uid://qr8qklyxdv62" path="res://ground/ground_1.glb" id="1_6skux"]
 [ext_resource type="Script" uid="uid://c2bhcf3h27dop" path="res://map_multiplayer.gd" id="1_mapmp"]
@@ -130,6 +130,7 @@
 [ext_resource type="PackedScene" uid="uid://lgxqhxjjwx14" path="res://3d models/Props/light_double.tscn" id="126_j5v5v"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="128_iepg8"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_brick.tscn" id="129_k5ip7"]
+[ext_resource type="PackedScene" uid="uid://ckcbgvwrflqh7" path="res://addons/mob_no1/black_reaper_–_retro_psx_monster.tscn" id="129_mob1"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_brick_hole.tscn" id="130_8rp7r"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_door_unblocked.tscn" id="131_y0tyt"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_small_window.tscn" id="132_ebnrs"]
