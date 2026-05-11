@@ -105,6 +105,7 @@
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_wood.tscn" id="136_xbrl3"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/metal_board_hori.tscn" id="137_tk7sp"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/wall_spiked.tscn" id="138_7cx14"]
+[ext_resource type="PackedScene" uid="uid://cx1pephyln55l" path="res://JugSpawner.tscn" id="138_j8f8g"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/metal_barricade.tscn" id="139_ttpp1"]
 [ext_resource type="PackedScene" uid="uid://d123u3oblg0t8" path="res://Spawner.tscn" id="139_umkgv"]
 [ext_resource type="PackedScene" path="res://3d models/Misc/metal_board.tscn" id="140_vibqx"]
@@ -12368,7 +12369,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 41.9
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 41.514244, 3.5996902, -40.29179)
 
 [node name="House 2 c3" parent="Buildings" unique_id=2144511579 instance=ExtResource("77_xtowc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.57215, 12.173578, -9.057051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.57215, 1.9100065, -9.057051)
 
 [node name="House 2 d2" parent="Buildings" unique_id=2060446962 instance=ExtResource("79_j7jxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.952131, 1.9116781, -9.019252)
@@ -13450,10 +13451,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.
 
 [node name="Bushesbox 1G32" parent="BushFence" unique_id=1898346329 instance=ExtResource("78_7ind1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.074845, 0.411, 19.27136)
-
-[node name="ProtoController" parent="." unique_id=1265634172 groups=["player"] instance=ExtResource("128_iepg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.92461, 3.0941658, 3.1008406)
-slide_on_ceiling = false
 
 [node name="FoodCar" type="Node3D" parent="." unique_id=946371717]
 
@@ -15519,4 +15516,7 @@ _spawnable_scenes = PackedStringArray("uid://bs72ogkvdd7d6")
 spawn_path = NodePath("..")
 
 [node name="mobspawn" parent="." unique_id=187067550 instance=ExtResource("139_umkgv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56061363, 23.150919, 6.5637817)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56061363, 16.150919, 6.5637817)
+
+[node name="jugspawn" parent="." unique_id=164634688 instance=ExtResource("138_j8f8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3656197, 14.109482, 16.302261)
